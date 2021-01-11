@@ -4,6 +4,19 @@
 
 #include "MyString.h"
 
+/**
+ * TODO: operator +=
+ * TODO: operator <
+ * TODO: operator >
+ * TODO: operator <=
+ * TODO: operator >=
+ *
+ * TODO: function find sub string
+ * TODO: function find and replace sub string
+ * TODO: function str to uppercase
+ * TODO: function str to lowercase
+ */
+
 MyString::MyString() {
     str = nullptr;
     this->Length = 0;
@@ -118,7 +131,8 @@ std::ostream& operator<< (std::ostream& out, const MyString& myString) {
 }
 std::istream& operator>> (std::istream& in, MyString& myString) {
     /**
-     * TODO: В задании к курсовому указано какой должен быть максимальный размер. Удостоверится что сейчас нужный !
+     * TODO: В задании к курсовому указано какой должен быть максимальный размер. Удостоверится что сейчас нужный !.
+     * TODO: Сделать чтение до первого символа переноса строки либо до \0
      */
 
     myString.str = new char;
