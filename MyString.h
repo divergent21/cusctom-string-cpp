@@ -1,12 +1,4 @@
-//
-// Created by divergent on 04.01.2021.
-//
-#pragma once
 #include <iostream>
-
-#ifndef KURSACH_MYSTRING_H
-#define KURSACH_MYSTRING_H
-
 
 class MyString {
 public:
@@ -19,11 +11,40 @@ public:
     int length();
 
     MyString& operator =(const MyString &other);
+
     MyString operator +(const MyString &other);
+    MyString operator +(char *other);
+    MyString operator +(char other);
+
+    MyString& operator +=(const MyString &other);
+    MyString& operator +=(const char *other);
+    MyString& operator +=(char *other);
+    MyString& operator +=(char other);
+    bool operator< (const MyString &other);
+    bool operator< (const char *other);
+    bool operator> (const MyString &other);
+    bool operator> (const char *other);
+    bool operator<= (const MyString &other);
+    bool operator>= (const MyString &other);
+    bool operator<= (const char *other);
+    bool operator>= (const char *other);
     bool operator ==(const MyString &other);
     bool operator !=(const MyString &other);
     char& operator [](int index);
-    friend std::ostream& operator<< (std::ostream& out, const MyString& myString); 
+
+    int find (MyString find);
+    int find (const char* find);
+    bool replace (MyString find, MyString replace);
+    bool replace (const char* find, MyString replace);
+    bool replace (MyString find, const char* replace);
+    bool replace (const char* find, const char* replace);
+
+    void toUpperCase();
+    void toLowerCase();
+
+    void swap(MyString &other);
+
+    friend std::ostream& operator<< (std::ostream& out, const MyString& myString);
     friend std::istream& operator>> (std::istream& in, MyString& myString);
 
 private:
@@ -33,6 +54,3 @@ private:
     static int length(const char *str);
     void resize();
 };
-
-
-#endif //KURSACH_MYSTRING_H
